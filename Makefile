@@ -6,27 +6,35 @@
 #    By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 09:22:13 by amarchan          #+#    #+#              #
-#    Updated: 2022/03/07 14:25:30 by amarchan         ###   ########.fr        #
+#    Updated: 2022/03/09 16:15:49 by amarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS =	utils/ft_atoi.c \
+SRCS =	src/ft_push_swap.c \
+		parsing/ft_parsing.c \
+		parsing/ft_panic.c \
+		utils/ft_atoi.c \
+		utils/ft_atoll.c \
 		utils/ft_isdigit.c \
+		utils/ft_isspace.c \
+		utils/ft_lstrip.c \
+		utils/ft_memcpy.c \
+		utils/ft_memmove.c \
 		utils/ft_putchar.c \
 		utils/ft_putnbr.c \
 		utils/ft_putstr.c \
+		utils/ft_rstrip.c \
 		utils/ft_strcat.c \
 		utils/ft_strlen.c \
+		parsing/ft_parsing.c \
 
+OBJS := ${SRCS:.c=.o}
 
-OBJS1 := ${SRCS1:.c=.o}
-OBJS2 := ${SRCS2:.c=.o}
+CC = clang
 
-CC = gcc
-
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g3 -Wall -Wextra -Werror
 
 AR = ar rcs
 
@@ -43,10 +51,10 @@ $(NAME): ${OBJS}
 		gcc -o $(NAME) $(OBJS)
 
 clean:
-	@${RM} ${OBJS1}
+	@${RM} ${OBJS}
 
 fclean: clean
-	@${RM} ${NAME1}
+	@${RM} ${NAME}
 
 re: fclean all
 

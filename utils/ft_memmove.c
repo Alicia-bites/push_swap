@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap_utils.c                               :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 14:53:08 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/07 14:53:12 by amarchan         ###   ########.fr       */
+/*   Created: 2022/03/09 14:49:32 by amarchan          #+#    #+#             */
+/*   Updated: 2022/03/09 15:03:28 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_push_swap.h"
 
-int	ft_panic(int errcode)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (errcode == 1)
-		ft_putstr("Usage : ./push_swap <pile>", 1);
-	// else if (errcode == )
-	// 	ft_putstr("", 1);
-	// else if (errcode == )
-	// 	ft_putstr("", 1);
-	// else if (errcode == )
-	// 	ft_putstr("Empty string.", 1);
-	// else if (errcode == )
-	// 	ft_putstr("", 1);
-	return (errcode);
-}
+	char		*d;
+	const char	*s;
 
-//check if pile is valid
-int	pile_is_valid(char *s)
-{
-	while (*s)
+	if (dest == NULL || src == NULL)
+		return (NULL);
+	d = dest;
+	s = src;
+	if (s < d)
 	{
-		if (!ft_isdigit(*s++))
-			return (0);
+		while (n > 0)
+		{
+			d[n - 1] = s[n - 1];
+			n--;
+		}
 	}
-	return (1);
+	else
+		ft_memcpy(d, s, n);
+	return (dest);
 }

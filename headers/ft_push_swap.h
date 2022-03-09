@@ -18,44 +18,35 @@
 
 # include <stdio.h>
 # include <string.h>
+# include <limits.h>
 # include <sys/types.h>
 # include <signal.h>
 # include <unistd.h>
 # include <stdint.h>
 # include <stdlib.h>
 
-typedef struct s_lined_up
+typedef struct s_stack
 {
-	int					bit;
-	pid_t				pid;
-	int					srv_flag;
+	int					elt;
+	int					size;
 	struct s_lined_up	*prev;
 	struct s_lined_up	*next;
-}	t_lined_up;
-
-typedef struct s_client
-{
-	char		*msg;
-	size_t		msg_len;
-	pid_t		srv_pid;
-	uint8_t		flags;
-	int			bits_sent;
-}	t_client;
-
-enum e_client_flags
-{
-	MSG_R=1,
-	PONG_OK=2,
-	CHAR_SENT=3	
-};
+}	t_stack;
 
 int			ft_strlen(const char *s);
 int			ft_atoi(const char *str);
+long long	ft_atoll(const char *str);
+void		*ft_memmove(void *dest, const void *src, size_t n);
+void		*ft_memcpy(void *s1, const void *s2, size_t n);
+void    	ft_lstrip(char *s);
+void    	ft_rstrip(char *s);
+int			ft_isspace(int c);
 void		ft_putchar(char c);
 void		ft_putstr(char *s, int isend);
 void		ft_putnbr(int n);
-int			pile_is_valid(char *s);
+int			pile_isvalid(char *s);
 int			ft_panic(int errcode);
+int			ft_parse(char *arg);
 int			ft_isdigit(int c);
 
 #endif
