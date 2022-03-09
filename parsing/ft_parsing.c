@@ -27,7 +27,7 @@ static void    ft_strip(char *s)
 }
 
 //check if argument isn't smaller than INT_MIN or bigger than INT_MAX
-static int	ft_valid_int(long long arg)
+static int	ft_invalid_int(long long arg)
 {
 	return (!(arg <= INT_MAX && arg >= INT_MIN));
 }
@@ -39,7 +39,12 @@ int ft_parse(char *arg)
 	if (ft_strlen(arg) <= 11 && stack_isinteger(arg))
 	{
 		test = ft_atoll(arg);
-		printf("%d\n", ft_valid_int(test));
+		if (ft_invalid_int(test))
+		{
+			ft_putstr("error", 1);
+			exit(EXIT_FAILURE);
+		}
+			
 	} 
 	else
 	{
