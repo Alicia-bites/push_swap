@@ -1,5 +1,25 @@
 #include "../headers/ft_push_swap.h"
 
+//convert each argument to from char to int and put it in the a linked list
+t_stack *ft_create_list(char *arg)
+{
+	static int	i = 0;
+	static t_stack *lst;
+	t_stack	*new;
+	int	int_arg;
+	
+	int_arg = ft_atoi(arg);
+	if (i == 0)
+		lst = ft_lstnew(int_arg);
+	else
+	{
+		new = ft_lstnew(int_arg);
+		ft_lstadd_back(&lst, new);
+	}	
+	i++;
+	return (lst);
+}
+
 //check if argument is integer
 static int	stack_isinteger(char *s)
 {
@@ -32,24 +52,26 @@ static int	ft_invalid_int(long long arg)
 	return (!(arg <= INT_MAX && arg >= INT_MIN));
 }
 
-int ft_parse(char *arg)
+//check if arguments are correct and if so call ft_create_list.
+t_stack *ft_parse(char *arg)
 {
-	long long test;
+	long long num;
+	t_stack *lst;
 	ft_strip(arg);
 	if (ft_strlen(arg) <= 11 && stack_isinteger(arg))
 	{
-		test = ft_atoll(arg);
-		if (ft_invalid_int(test))
+		num = ft_atoll(arg);
+		if (ft_invalid_int(num))
 		{
-			ft_putstr("error", 1);
+			ft_putstr("Error", 1);
 			exit(EXIT_FAILURE);
 		}
-			
 	} 
 	else
 	{
 		ft_putstr("error", 1);
 		exit(1);
 	}
-	return (0);
+	lst = ft_create_list(arg);
+	return (lst);
 }
