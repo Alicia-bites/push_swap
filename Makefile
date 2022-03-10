@@ -6,7 +6,7 @@
 #    By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 09:22:13 by amarchan          #+#    #+#              #
-#    Updated: 2022/03/09 16:17:34 by amarchan         ###   ########.fr        #
+#    Updated: 2022/03/10 12:21:03 by amarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,11 @@ SRCS =	src/ft_push_swap.c \
 		utils/ft_rstrip.c \
 		utils/ft_strcat.c \
 		utils/ft_strlen.c \
+		utils/ft_lstadd_back.c \
+		utils/ft_lstclear_back.c \
+		utils/ft_lstclear.c \
+		utils/ft_lstnew.c \
+		utils/ft_lstsize.c \
 
 OBJS := ${SRCS:.c=.o}
 
