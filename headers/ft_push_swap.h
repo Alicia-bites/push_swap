@@ -27,10 +27,10 @@
 
 typedef struct s_stack
 {
-	int					elt;
+	int					num;
 	int					size;
-	struct s_lined_up	*prev;
-	struct s_lined_up	*next;
+	struct s_stack		*prev;
+	struct s_stack		*next;
 }	t_stack;
 
 int			ft_strlen(const char *s);
@@ -46,7 +46,12 @@ void		ft_putstr(char *s, int isend);
 void		ft_putnbr(int n);
 int			pile_isvalid(char *s);
 int			ft_panic(int errcode);
-int			ft_parse(char *arg);
+t_stack 	*ft_parse(char *arg);
 int			ft_isdigit(int c);
+void		ft_lstadd_back(t_stack **first_elt, t_stack *new);
+void		ft_lstclear_back(t_stack **lst);
+void		ft_lstclear(t_stack **lst);
+t_stack		*ft_lstnew(int arg);
+int			ft_lstsize(t_stack *lst);
 
 #endif
