@@ -2,7 +2,7 @@ import string
 import random
 import subprocess
 
-TEST_COUNT = 200
+TEST_COUNT = 30
 
 charset = string.ascii_letters + string.digits
 def random_string(length=12):
@@ -104,4 +104,20 @@ for x in range(TEST_COUNT):
 		print("\n\t❌ KO")
 		print("Args : ", " ".join(["./push_swap", *args]))
 		exit(0)
+print("\n\t✅ OK")
+
+for x in range(TEST_COUNT):
+	print("⏳ Checking with duplicates integers", end="\r")
+	numbers = number_gens(n=12)
+	# duplicate numbers
+	numbers.extend(numbers)
+	random.shuffle(numbers)
+	args = convert_to_string(numbers)
+	try:
+		subprocess.check_call(["./push_swap", *args], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		print("\n\t❌ KO")
+		print("Args : ", " ".join(["./push_swap", *args]))
+		exit(0)
+	except subprocess.CalledProcessError:
+		pass
 print("\n\t✅ OK")
