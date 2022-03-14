@@ -1,5 +1,17 @@
 #include "../headers/ft_push_swap.h"
 
+//check if duplicate entry
+int	ft_checkdup(int prev, int elt)
+{
+	// printf("prev %d\n", prev);
+	// printf("elt %d\n", elt);
+	if (prev == elt)
+	{
+		ft_putstr("Found duplicates", 1);
+		exit(EXIT_FAILURE);
+	}
+	return (0);
+}
 //convert each argument to from char to int and put it in the a linked list
 t_stack *ft_create_list(char *arg)
 {
@@ -15,6 +27,7 @@ t_stack *ft_create_list(char *arg)
 	{
 		new = ft_lstnew(int_arg);
 		ft_lstadd_back(&lst, new);
+		ft_checkdup(new->prev->num, new->num);
 	}	
 	i++;
 	return (lst);
