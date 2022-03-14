@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 11:53:40 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/10 14:09:56 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/03/14 15:47:22 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_stack	*ft_lstnew(int arg)
 	elt = malloc(sizeof(t_stack));
 	if (!elt)
 	{
-		ft_putstr("malloc failed", 1);
+		ft_panic(MALLOC_FAILURE);
 		exit(EXIT_FAILURE);
 	}
 	elt->num = arg;

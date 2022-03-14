@@ -1,36 +1,34 @@
 #include "../headers/ft_push_swap.h"
-
+void	ft_print_stack(t_stack *stack)
+{
+	t_stack *iterator;
+	iterator = stack;
+	while (iterator)
+	{
+		printf("%d\n", iterator->num);
+		iterator = iterator->next;
+	}
+}
 
 int	main(int argc, char **argv)
 {
-	t_stack *stack;
-	t_stack *iterator;
+	t_stack *a;
+	t_stack *b;
+	
 	int	i;
-	int size;
 
 	i = 1;
 	if (argc <= 2)
-		return (ft_panic(1));
-	size = ft_strlen(argv[1]);
-	if (size == 0)
-		return (ft_panic(EMPTY_STR));
+		return (ft_panic(MISSING_ARG));
 	while (argv[i])
-		stack = ft_parse(argv[i++]);
-	//printf("stack : %p\n", stack);
-	iterator = stack;
-	while (iterator)
-	{
-		printf("iterator->num = %d\n", iterator->num);
-		iterator = iterator->next;
-	}
-	ft_swap(stack);
-	puts("----------------------------------------");
-	iterator = stack;
-	while (iterator)
-	{
-		printf("iterator->num = %d\n", iterator->num);
-		// printf("iterator->next->num = %d\n", iterator->next->num);
-		iterator = iterator->next;
-	}
+		a = ft_parse(argv[i++]);
+	//ft_sa(a);
+	b = ft_lstnew(0);
+	ft_print_stack(a);
+	//ft_pa(&a, &b);
+	//ft_print_stack(a);
+	ft_pb(&b, &a);
+	puts("------------------");
+	ft_print_stack(b);
 	return (0);
 }

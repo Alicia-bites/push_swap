@@ -6,13 +6,13 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:12:42 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/07 14:43:50 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/03/14 15:34:37 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_push_swap.h"
 
-void	ft_putchar(char c)
+void	ft_putchar(char c, int fd)
 {
-	write(1, &c, 1);
+	write(fd, &c, 1);
 }

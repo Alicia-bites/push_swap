@@ -1,5 +1,24 @@
 #include "../headers/ft_push_swap.h"
 
+void	ft_pb(t_stack **b, t_stack **a)
+{
+	if (b)
+	{
+		ft_lstadd_front(b, *a);
+		ft_putstr("pb", 1, 1);
+	}
+}
+
+void	ft_lstadd_front(t_stack **first_elt, t_stack *new)
+{
+	if (first_elt && new)
+	{
+		new->next = *first_elt;
+		*first_elt = new;
+		new->next->prev = *first_elt;
+	}	
+}
+
 t_stack *ft_create_list(char *arg)
 {
 	static int	i = 0;
@@ -14,6 +33,7 @@ t_stack *ft_create_list(char *arg)
 	{
 		new = ft_lstnew(int_arg);
 		ft_lstadd_back(&lst, new);
+		ft_checkdup(lst, new->num);
 	}	
 	i++;
 	return (lst);
@@ -22,16 +42,26 @@ t_stack *ft_create_list(char *arg)
 int	main(int argc, char **argv)
 {
 	int	i;
-	t_stack *lst;
+	t_stack *a;
+	t_stack *b;
 	t_stack *iterator;
 
 	i = 1;
 	if (argc > 1)
 	{
 		while (argv[i])
-			lst = ft_create_list(argv[i++]);
+			a = ft_create_list(argv[i++]);
 	}
-	iterator = lst;
+	b = ft_lstnew(0);
+	iterator = a;
+	while (iterator)
+	{
+		printf("iterator->num = %d\n", iterator->num);
+		iterator = iterator->next;
+	}
+	ft_pb(&b, &a);
+	puts("----------------------------------------");
+	iterator = b;
 	while (iterator)
 	{
 		printf("iterator->num = %d\n", iterator->num);
@@ -39,27 +69,3 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
-
-// int main(int argc, char **argv)
-// {
-// 	int	i;
-// 	long long test;
-	
-// 	i = 1;
-// 	while (argv[i])
-// 	{
-// 		ft_strip(argv[i]);
-// 		if (ft_strlen(argv[i]) <= 11 && pile_isdigit(argv[i]))
-// 		{
-// 			test = ft_atoll(argv[i]);
-// 			printf("%d\n", ft_is_integer(test));
-// 		} 
-// 		else
-// 		{
-// 			puts("error");
-// 			exit(1);
-// 		}
-// 		i++;
-// 	}
-// 	return (0);
-// }

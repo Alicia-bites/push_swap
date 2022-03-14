@@ -13,8 +13,14 @@
 #ifndef FT_PUSH_SWAP_H
 # define FT_PUSH_SWAP_H
 
-# define INVALID_PILE -2
-# define EMPTY_STR -3
+# define MISSING_ARG -1
+# define EMPTY_STR -2
+# define FOUND_DUP -3
+# define NOT_INT -4
+# define OUT_INT -5
+# define INVALID_ARG -6
+# define MALLOC_FAILURE -7
+
 
 # include <stdio.h>
 # include <string.h>
@@ -32,6 +38,7 @@ typedef struct s_stack
 	struct s_stack		*next;
 }	t_stack;
 
+//parsing
 int			ft_strlen(const char *s);
 int			ft_atoi(const char *str);
 long long	ft_atoll(const char *str);
@@ -40,18 +47,28 @@ void		*ft_memcpy(void *s1, const void *s2, size_t n);
 void    	ft_lstrip(char *s);
 void    	ft_rstrip(char *s);
 int			ft_isspace(int c);
-void		ft_putchar(char c);
-void		ft_putstr(char *s, int isend);
+void		ft_putchar(char c, int fd);
+void		ft_putstr(char *s, int isend, int fd);
 void		ft_putnbr(int n);
 int			pile_isvalid(char *s);
 int			ft_panic(int errcode);
 t_stack 	*ft_parse(char *arg);
+int			ft_checkdup(t_stack *stack, int elt);
 int			ft_isdigit(int c);
+
+//linked list manipulation
 void		ft_lstadd_back(t_stack **first_elt, t_stack *new);
+void		ft_lstadd_front(t_stack **first_elt, t_stack *new);
 void		ft_lstclear_back(t_stack **lst);
 void		ft_lstclear(t_stack **lst);
 t_stack		*ft_lstnew(int arg);
 int			ft_lstsize(t_stack *lst);
-void		ft_swap(t_stack *stack);
+
+//moves
+void		ft_sa(t_stack *stack);
+void		ft_sb(t_stack *stack);
+void		ft_pa(t_stack **a, t_stack **b);
+void		ft_pb(t_stack **b, t_stack **a);
+
 
 #endif

@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   swaps.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 15:47:20 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/14 15:38:09 by amarchan         ###   ########.fr       */
+/*   Created: 2022/03/14 14:45:26 by amarchan          #+#    #+#             */
+/*   Updated: 2022/03/14 18:44:27 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_push_swap.h"
 
-void	ft_putnbr(int n)
+//swap the first 2 elts of the stack
+void	ft_sa(t_stack *stack)
 {
-	if (n == -2147483648)
+	int tmp;
+
+	if (stack)
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		tmp = stack->num;
+		stack->num = stack->next->num;
+		stack->next->num = tmp;
+		ft_putstr("sa", 1, 2);
 	}
-	if (n < 0)
+	
+}
+
+void	ft_sb(t_stack *stack)
+{
+	int tmp;
+
+	if (stack)
 	{
-		ft_putchar('-', 1);
-		n *= -1;
+		tmp = stack->num;
+		stack->num = stack->next->num;
+		stack->next->num = tmp;
+		ft_putstr("sb", 1, 2);
 	}
-	if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
-	}
-	else
-		ft_putchar(n + '0', 1);
+	
 }

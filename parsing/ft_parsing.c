@@ -1,33 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/14 15:45:04 by amarchan          #+#    #+#             */
+/*   Updated: 2022/03/14 15:46:54 by amarchan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../headers/ft_push_swap.h"
 
-//check if duplicate entry
-int	ft_checkdup(t_stack *stack, int elt)
-{
-	t_stack *iterator;
-	
-	if (stack)
-	{
-		iterator = stack;
-		while (iterator->next)
-		{
-			if (iterator->num == elt)
-			{
-				ft_putstr("Found duplicates", 1);
-				exit(EXIT_FAILURE);
-			}
-			iterator = iterator->next;
-		}
-	}
-	return (0);
-}
-
 //convert each argument to from char to int and put it in the a linked list
-t_stack *ft_create_list(char *arg)
+t_stack	*ft_create_list(char *arg)
 {
-	static int	i = 0;
-	static t_stack *lst;
-	t_stack	*new;
-	int	int_arg;
+	static int		i = 0;
+	static t_stack	*lst;
+	t_stack			*new;
+	int				int_arg;
 	
 	int_arg = ft_atoi(arg);
 	if (i == 0)
@@ -46,6 +37,7 @@ t_stack *ft_create_list(char *arg)
 static int	stack_isinteger(char *s)
 {
 	int	i;
+	
 	i = 0;
 	while (s[i])
 	{
@@ -53,7 +45,7 @@ static int	stack_isinteger(char *s)
 			i++;
 		if (!ft_isdigit(s[i]))
 		{	
-			printf("%s\n", s);
+			ft_panic(NOT_INT);
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -62,10 +54,10 @@ static int	stack_isinteger(char *s)
 }
 
 //get rid of extra spaces before argument
-static void    ft_strip(char *s)
+static void	ft_strip(char *s)
 {
-    ft_lstrip(s);
-    ft_rstrip(s);
+	ft_lstrip(s);
+	ft_rstrip(s);
 }
 
 //check if argument isn't smaller than INT_MIN or bigger than INT_MAX
@@ -75,24 +67,30 @@ static int	ft_invalid_int(long long arg)
 }
 
 //check if arguments are correct and if so call ft_create_list.
-t_stack *ft_parse(char *arg)
+t_stack	*ft_parse(char *arg)
 {
-	long long num;
-	t_stack *lst;
+	long long	num;
+	t_stack		*lst;
+
 	ft_strip(arg);
-	if (ft_strlen(arg) <= 11 && stack_isinteger(arg))
+	if (ft_strlen(arg) == 0)
+	{
+		ft_panic(EMPTY_STR);
+		exit(EXIT_FAILURE);
+	}
+	else if (ft_strlen(arg) <= 11 && stack_isinteger(arg))
 	{
 		num = ft_atoll(arg);
 		if (ft_invalid_int(num))
 		{
-			ft_putstr("Error", 1);
+			ft_panic(OUT_INT);
 			exit(EXIT_FAILURE);
 		}
 	} 
 	else
 	{
-		ft_putstr("error", 1);
-		exit(1);
+		ft_panic(INVALID_ARG);
+		exit(EXIT_FAILURE);
 	}
 	lst = ft_create_list(arg);
 	return (lst);
