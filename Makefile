@@ -6,7 +6,7 @@
 #    By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 09:22:13 by amarchan          #+#    #+#              #
-#    Updated: 2022/03/10 12:21:03 by amarchan         ###   ########.fr        #
+#    Updated: 2022/03/14 14:47:07 by amarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = push_swap
 SRCS =	src/ft_push_swap.c \
 		parsing/ft_parsing.c \
 		parsing/ft_panic.c \
+		moves/swaps.c \
 		utils/ft_atoi.c \
 		utils/ft_atoll.c \
 		utils/ft_isdigit.c \
@@ -36,7 +37,7 @@ SRCS =	src/ft_push_swap.c \
 
 OBJS := ${SRCS:.c=.o}
 
-CC = clang
+CC = gcc
 
 CFLAGS = -g3 -Wall -Wextra -Werror
 
