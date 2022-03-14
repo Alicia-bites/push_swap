@@ -28,7 +28,6 @@
 typedef struct s_stack
 {
 	int					num;
-	int					size;
 	struct s_stack		*prev;
 	struct s_stack		*next;
 }	t_stack;
@@ -53,5 +52,6 @@ void		ft_lstclear_back(t_stack **lst);
 void		ft_lstclear(t_stack **lst);
 t_stack		*ft_lstnew(int arg);
 int			ft_lstsize(t_stack *lst);
+void		ft_swap(t_stack *stack);
 
 #endif
