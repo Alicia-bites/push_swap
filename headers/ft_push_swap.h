@@ -52,6 +52,7 @@ void		ft_putstr(char *s, int isend, int fd);
 void		ft_putnbr(int n);
 int			pile_isvalid(char *s);
 int			ft_panic(int errcode);
+t_stack		*ft_create_list(char *arg);
 t_stack 	*ft_parse(char *arg);
 int			ft_checkdup(t_stack *stack, int elt);
 int			ft_isdigit(int c);
@@ -69,6 +70,10 @@ void		ft_sa(t_stack *stack);
 void		ft_sb(t_stack *stack);
 void		ft_pa(t_stack **a, t_stack **b);
 void		ft_pb(t_stack **b, t_stack **a);
-
+void		ft_ra(t_stack *stack);
+void		ft_rb(t_stack *stack);
+void		ft_rra(t_stack *stack);
+void		ft_rrb(t_stack *stack);
+void		ft_rrr(t_stack *a, t_stack *b);
 
 #endif

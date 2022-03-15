@@ -6,7 +6,7 @@
 #    By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 09:22:13 by amarchan          #+#    #+#              #
-#    Updated: 2022/03/14 18:45:45 by amarchan         ###   ########.fr        #
+#    Updated: 2022/03/15 11:56:11 by amarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ SRCS =	src/ft_push_swap.c \
 		parsing/ft_parsing_utils.c \
 		moves/swap.c \
 		moves/push.c \
+		moves/rotate.c \
+		moves/reverse_rotate.c \
 		utils/ft_atoi.c \
 		utils/ft_atoll.c \
 		utils/ft_isdigit.c \

@@ -13,7 +13,7 @@ void	ft_print_stack(t_stack *stack)
 int	main(int argc, char **argv)
 {
 	t_stack *a;
-	t_stack *b;
+	//t_stack *b;
 	
 	int	i;
 
@@ -23,12 +23,17 @@ int	main(int argc, char **argv)
 	while (argv[i])
 		a = ft_parse(argv[i++]);
 	//ft_sa(a);
-	b = ft_lstnew(0);
+	//b = ft_lstnew(0);
 	ft_print_stack(a);
 	//ft_pa(&a, &b);
 	//ft_print_stack(a);
-	ft_pb(&b, &a);
+	//ft_pb(&b, &a);
+	//ft_ra(a);
+	//ft_rb(b);
+	//ft_rr(a, b);
+	ft_rra(a);
 	puts("------------------");
-	ft_print_stack(b);
+	ft_print_stack(a);
+	//ft_print_stack(b);
 	return (0);
 }
