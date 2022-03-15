@@ -6,14 +6,14 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:45:04 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/14 15:46:54 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:57:52 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_push_swap.h"
 
 //convert each argument to from char to int and put it in the a linked list
-t_stack	*ft_create_list(char *arg)
+t_stack	*ft_create_list(int argc, char *arg)
 {
 	static int		i = 0;
 	static t_stack	*lst;
@@ -22,10 +22,10 @@ t_stack	*ft_create_list(char *arg)
 	
 	int_arg = ft_atoi(arg);
 	if (i == 0)
-		lst = ft_lstnew(int_arg);
+		lst = ft_lstnew(argc, int_arg);
 	else
 	{
-		new = ft_lstnew(int_arg);
+		new = ft_lstnew(argc, int_arg);
 		ft_lstadd_back(&lst, new);
 		ft_checkdup(lst, new->num);
 	}	
@@ -67,7 +67,7 @@ static int	ft_invalid_int(long long arg)
 }
 
 //check if arguments are correct and if so call ft_create_list.
-t_stack	*ft_parse(char *arg)
+t_stack	*ft_parse(int argc, char *arg)
 {
 	long long	num;
 	t_stack		*lst;
@@ -92,6 +92,6 @@ t_stack	*ft_parse(char *arg)
 		ft_panic(INVALID_ARG);
 		exit(EXIT_FAILURE);
 	}
-	lst = ft_create_list(arg);
+	lst = ft_create_list(argc, arg);
 	return (lst);
 }

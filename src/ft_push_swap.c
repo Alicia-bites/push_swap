@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	if (argc <= 2)
 		return (ft_panic(MISSING_ARG));
 	while (argv[i])
-		a = ft_parse(argv[i++]);
+		a = ft_parse(argc, argv[i++]);
 	//ft_sa(a);
 	//b = ft_lstnew(0);
 	ft_print_stack(a);

@@ -34,6 +34,8 @@
 typedef struct s_stack
 {
 	int					num;
+	int					size;
+	int					*sort;
 	struct s_stack		*prev;
 	struct s_stack		*next;
 }	t_stack;
@@ -52,8 +54,8 @@ void		ft_putstr(char *s, int isend, int fd);
 void		ft_putnbr(int n);
 int			pile_isvalid(char *s);
 int			ft_panic(int errcode);
-t_stack		*ft_create_list(char *arg);
-t_stack 	*ft_parse(char *arg);
+t_stack		*ft_create_list(int argc, char *arg);
+t_stack 	*ft_parse(int argc, char *arg);
 int			ft_checkdup(t_stack *stack, int elt);
 int			ft_isdigit(int c);
 
@@ -62,7 +64,7 @@ void		ft_lstadd_back(t_stack **first_elt, t_stack *new);
 void		ft_lstadd_front(t_stack **first_elt, t_stack *new);
 void		ft_lstclear_back(t_stack **lst);
 void		ft_lstclear(t_stack **lst);
-t_stack		*ft_lstnew(int arg);
+t_stack		*ft_lstnew(int argc, int arg);
 int			ft_lstsize(t_stack *lst);
 
 //moves
