@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:07:43 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/14 15:48:43 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/03/25 14:53:12 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,51 @@ int	ft_checkdup(t_stack *stack, int elt)
 		}
 	}
 	return (0);
+}
+
+//sort stack a
+t_stack	*init_sort(t_stack *stack)
+{
+	int		temp;
+	t_stack	*sorted_a;
+
+	sorted_a = stack;
+	while (!(is_sorted(sorted_a)))
+	{
+		while (sorted_a->next)
+		{
+			if (sorted_a->num > sorted_a->next->num)
+			{
+				temp = sorted_a->num;
+				sorted_a->num = sorted_a->next->num;
+				sorted_a->next->num = temp;
+			}
+			sorted_a = sorted_a->next;
+		}
+		while (sorted_a->prev)
+			sorted_a = sorted_a->prev;
+	}
+	return (sorted_a);
+}
+
+void	ft_getsorted(t_stack **a, t_stack *copy)
+{
+	t_stack	*it_a;
+	t_stack	*it_copy;
+
+	it_a = *a;
+	while(it_a)
+	{
+		it_copy = copy;
+		while (it_copy)
+		{
+			if(it_a->num == it_copy->num)
+			{
+				it_a->sorted = it_copy->index;
+				break;
+			}
+			it_copy = it_copy->next;
+		}
+		it_a = it_a->next;
+	}
 }

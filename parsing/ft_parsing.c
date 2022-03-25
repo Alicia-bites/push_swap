@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:45:04 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/15 18:57:52 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/03/25 11:11:07 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ t_stack	*ft_create_list(int argc, char *arg)
 	
 	int_arg = ft_atoi(arg);
 	if (i == 0)
-		lst = ft_lstnew(argc, int_arg);
+		lst = ft_lstnew(argc - 1, int_arg, i);
 	else
 	{
-		new = ft_lstnew(argc, int_arg);
+		new = ft_lstnew(argc - 1, int_arg, i);
 		ft_lstadd_back(&lst, new);
 		ft_checkdup(lst, new->num);
 	}	

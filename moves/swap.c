@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:45:26 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/15 11:53:22 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/03/17 16:53:30 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_sa(t_stack *stack)
 		stack->next->num = tmp;
 		
 		ft_putstr("sa", 1, 1);
-		ft_putstr("sb", 1, 1);
 	}
 	
 }

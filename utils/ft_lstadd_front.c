@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 14:09:36 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/14 17:52:00 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/03/19 14:25:16 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_lstadd_front(t_stack **first_elt, t_stack *new)
 {
+	//printf("new->num : %d\n", new->num);
 	if (first_elt && new)
 	{
 		new->next = *first_elt;

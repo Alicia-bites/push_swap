@@ -6,13 +6,16 @@
 #    By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 09:22:13 by amarchan          #+#    #+#              #
-#    Updated: 2022/03/15 11:56:11 by amarchan         ###   ########.fr        #
+#    Updated: 2022/03/25 14:57:13 by amarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRCS =	src/ft_push_swap.c \
+		src/ft_push_swap_utils.c \
+		src/sortmore.c \
+		src/sortmore_utils.c \
 		parsing/ft_parsing.c \
 		parsing/ft_parsing_utils.c \
 		moves/swap.c \
@@ -35,9 +38,11 @@ SRCS =	src/ft_push_swap.c \
 		utils/ft_lstadd_back.c \
 		utils/ft_lstadd_front.c \
 		utils/ft_lstclear_back.c \
+		utils/ft_lstclear_first.c \
 		utils/ft_lstclear.c \
 		utils/ft_lstnew.c \
 		utils/ft_lstsize.c \
+		utils/ft_lstcopy.c \
 
 OBJS := ${SRCS:.c=.o}
 

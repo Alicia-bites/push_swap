@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotation.c                                         :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:12:18 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/15 11:54:53 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/03/23 17:22:26 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ void	ft_ra(t_stack *stack)
 
 	if (stack)
 	{
-			tmp = stack->num;
+		tmp = stack->num;
 		while (stack->next)
 		{
 			stack->num = stack->next->num;
 			stack = stack->next;
 		}
 		stack->num = tmp;
+		stack->next = NULL; 
 	}
 	ft_putstr("ra", 1, 1);
 }
@@ -35,13 +36,14 @@ void	ft_rb(t_stack *stack)
 
 	if (stack)
 	{
-			tmp = stack->num;
+		tmp = stack->num;
 		while (stack->next)
 		{
 			stack->num = stack->next->num;
 			stack = stack->next;
 		}
 		stack->num = tmp;
+		stack->next = NULL; 
 	}
 	ft_putstr("rb", 1, 1);
 }
