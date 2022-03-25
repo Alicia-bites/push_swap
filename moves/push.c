@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:08:07 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/24 15:22:54 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/03/25 15:58:25 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	ft_pa(t_stack **a, t_stack **b)
 	if (!(*b))
 		return ;
 	if (!(*a))
-		*a = ft_lstnew((*a)->size, (*b)->num, 0);
+		*a = ft_lstnew((*a)->size, (*b)->num, 0, (*b)->sorted);
 	else
 	{
-		new = ft_lstnew((*a)->size, (*b)->num, 0);
+		new = ft_lstnew((*a)->size, (*b)->num, 0, (*b)->sorted);
 		ft_lstadd_front(a, new);
 		iterator = *a;
 		i = 1;
@@ -67,10 +67,10 @@ void	ft_pb(t_stack **b, t_stack **a)
 	if (!(*a))
 		return ;
 	if (!(*b))
-		*b = ft_lstnew((*a)->size, (*a)->num, 0);
+		*b = ft_lstnew((*a)->size, (*a)->num, 0, (*a)->sorted);
 	else
 	{
-		new = ft_lstnew((*a)->size, (*a)->num, 0);
+		new = ft_lstnew((*a)->size, (*a)->num, 0, (*a)->sorted);
 		ft_lstadd_front(b, new);
 		iterator = *b;
 		i = 1;

@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:45:26 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/17 16:53:30 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/03/25 16:09:17 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@
 void	ft_sa(t_stack *stack)
 {
 	int tmp;
+	int	tmp_s;
 
 	if (stack)
 	{
 		tmp = stack->num;
+		tmp_s = stack->sorted;
 		stack->num = stack->next->num;
+		stack->sorted = stack->next->sorted;
 		stack->next->num = tmp;
-		
+		stack->next->sorted = tmp_s;
 		ft_putstr("sa", 1, 1);
 	}
 	
@@ -31,12 +34,16 @@ void	ft_sa(t_stack *stack)
 void	ft_sb(t_stack *stack)
 {
 	int tmp;
+	int	tmp_s;
 
 	if (stack)
 	{
 		tmp = stack->num;
+		tmp_s = stack->sorted;
 		stack->num = stack->next->num;
+		stack->sorted = stack->next->sorted;
 		stack->next->num = tmp;
+		stack->next->sorted = tmp_s;
 		ft_putstr("sb", 1, 2);
 	}
 	

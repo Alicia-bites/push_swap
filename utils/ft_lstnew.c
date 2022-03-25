@@ -6,13 +6,13 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 11:53:40 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/25 13:43:51 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/03/25 15:56:57 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_push_swap.h"
 
-t_stack	*ft_lstnew(int size, int arg, int index)
+t_stack	*ft_lstnew(int size, int arg, int index, int sorted)
 {
 	t_stack	*elt;
 
@@ -24,7 +24,7 @@ t_stack	*ft_lstnew(int size, int arg, int index)
 	}
 	elt->num = arg;
 	elt->index = index;
-	elt->sorted = 0;
+	elt->sorted = sorted;
 	elt->size = size;
 	elt->prev = NULL;
 	elt->next = NULL;

@@ -69,7 +69,7 @@ void		ft_lstadd_front(t_stack **first_elt, t_stack *new);
 void		ft_lstclear_back(t_stack **lst);
 void		ft_lstclear(t_stack **lst);
 void		ft_lstclear_first(t_stack **elt);
-t_stack		*ft_lstnew(int argc, int arg, int index);
+t_stack		*ft_lstnew(int argc, int arg, int index, int sorted);
 int			ft_lstsize(t_stack *lst);
 t_stack    	*ft_lstcopy(t_stack *lst);
 

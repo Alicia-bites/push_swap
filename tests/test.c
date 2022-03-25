@@ -1,5 +1,26 @@
 #include "../headers/ft_push_swap.h"
 
+void	sort_3(t_stack *stack)
+{
+	t_stack *last_elt;
+
+	last_elt = stack;
+	while (last_elt->next)
+		last_elt = last_elt->next;
+	while (!is_sorted(stack))
+	{
+		if (stack->num > last_elt->num)
+		{
+			if (stack->num > stack->next->num)
+				ft_ra(stack);
+			else
+				ft_rra(stack);
+		}
+		else
+			ft_sa(stack);
+	}
+}
+
 // check if b elt can be placed at the right place in a in one move
 // if not, remember for the b elt what moves need to be done
 // by stocking them in a tab
@@ -131,28 +152,6 @@ void	sort_more(t_stack **a)
 	}
 }
 
-void	ft_getsorted(t_stack **a, t_stack *copy)
-{
-	t_stack	*it_a;
-	t_stack	*it_copy;
-
-	it_a = *a;
-	while(it_a)
-	{
-		it_copy = copy;
-		while (it_copy)
-		{
-			if(it_a->num == it_copy->num)
-			{
-				it_a->sorted = it_copy->index;
-				break;
-			}
-			it_copy = it_copy->next;
-		}
-		it_a = it_a->next;
-	}
-}
-
 int	main(int argc, char **argv)
 {
 	int	i;
@@ -169,6 +168,7 @@ int	main(int argc, char **argv)
 		while (iterator)
 		{
 			printf("iterator->num = %d\n", iterator->num);
+			printf("a->sorted = %d\n", iterator->sorted);
 			//printf("iterator->next = %p\n", iterator->next);
 			// if (iterator->prev)
 				// printf("iterator->prev->num = %d\n", iterator->prev->num);
@@ -176,9 +176,12 @@ int	main(int argc, char **argv)
 			//printf("iterator->prev->num = %d\n", iterator->index);
 		}
 		puts("----------------------------------------");
-		copy = ft_lstcpy(a);
+		copy = ft_lstcopy(a);
 		init_sort(copy);
 		ft_getsorted(&a, copy);
+		//ft_pb(&b, &a);
+		//ft_rrb(a);
+		ft_sb(a);
 		//sort_3(a);
 		//sort_4(&a);
 		puts("----------------------------------------");
@@ -190,6 +193,16 @@ int	main(int argc, char **argv)
 		//		printf("iterator->prev->num = %d\n", iterator->prev->num);
 			//printf("a->index = %d\n", iterator->index);
 			printf("a->sorted = %d\n", iterator->sorted);
+			iterator = iterator->next;
+		}
+		iterator = b;
+		while (iterator)
+		{
+			printf("a->num = %d\n", iterator->num);
+	//		if (iterator->prev)
+		//		printf("iterator->prev->num = %d\n", iterator->prev->num);
+			//printf("a->index = %d\n", iterator->index);
+			printf("b->sorted = %d\n", iterator->sorted);
 			iterator = iterator->next;
 		}
 	}
