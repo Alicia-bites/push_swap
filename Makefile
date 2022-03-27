@@ -6,7 +6,7 @@
 #    By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 09:22:13 by amarchan          #+#    #+#              #
-#    Updated: 2022/03/25 14:57:13 by amarchan         ###   ########.fr        #
+#    Updated: 2022/03/26 15:57:35 by amarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ OBJS := ${SRCS:.c=.o}
 
 CC = gcc
 
-CFLAGS = -g3 -Wall -Wextra -Werror
+CFLAGS = -g3
 
 AR = ar rcs
 

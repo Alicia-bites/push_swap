@@ -164,24 +164,27 @@ int	main(int argc, char **argv)
 	{
 		while (argv[i])
 			a = ft_create_list(argc, argv[i++]);
-		iterator = a;
-		while (iterator)
-		{
-			printf("iterator->num = %d\n", iterator->num);
-			printf("a->sorted = %d\n", iterator->sorted);
-			//printf("iterator->next = %p\n", iterator->next);
-			// if (iterator->prev)
-				// printf("iterator->prev->num = %d\n", iterator->prev->num);
-			iterator = iterator->next;
-			//printf("iterator->prev->num = %d\n", iterator->index);
-		}
-		puts("----------------------------------------");
+		// iterator = a;
+		// while (iterator)
+		// {
+		// 	printf("iterator->num = %d\n", iterator->num);
+		// 	printf("a->sorted = %d\n", iterator->sorted);
+		// 	//printf("iterator->next = %p\n", iterator->next);
+		// 	// if (iterator->prev)
+		// 		// printf("iterator->prev->num = %d\n", iterator->prev->num);
+		// 	iterator = iterator->next;
+		// 	//printf("iterator->prev->num = %d\n", iterator->index);
+		// }
+		// puts("----------------------------------------");
 		copy = ft_lstcopy(a);
 		init_sort(copy);
 		ft_getsorted(&a, copy);
 		//ft_pb(&b, &a);
 		//ft_rrb(a);
-		ft_sb(a);
+		ft_ra(a);
+		ft_ra(a);
+		ft_ra(a);
+		ft_ra(a);
 		//sort_3(a);
 		//sort_4(&a);
 		puts("----------------------------------------");
