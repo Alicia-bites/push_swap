@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 14:44:48 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/27 12:23:37 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/03/28 12:20:01 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ static void	insert(t_stack **a, t_stack **b)
 		it_b = it_b->next;
 	}
 	//printf("moves : %d\n", moves);
-	printf("idx_a : %d\n", moves);
-	printf("idx_b : %d\n", index_b);
+	//("idx_a : %d\n", moves);
+	//printf("idx_b : %d\n", index_b);
 	rotate_ab(moves, index_b, a, b);
 	ft_pa(a, b);
 	// if ((*a)->sorted > (*a)->next->sorted)
@@ -98,7 +98,7 @@ static void	sort_insert(t_stack **a)
 	b = NULL;
 	while (i < ((*a)->size / 2))
 	{
-		printf("sorted : %d\n",(*a)->sorted);
+		//printf("sorted : %d\n",(*a)->sorted);
 		if ((*a)->sorted < ((*a)->size / 2))
 		{
 			ft_pb(&b, a);
@@ -112,40 +112,40 @@ static void	sort_insert(t_stack **a)
 		ft_pb(&b, a);
 		i++;
 	}
-	b_it = b;
-	while (b_it)
-	{
-		printf("b_it->num = %d\n", b_it->num);
-		//printf("a_it->index = %d\n", a_it->index);
-		// if (a_it->next)
-		// 	printf("a_it->num = %d\n", a_it->next->num);
-		b_it = b_it->next;
-	}
-	puts("-----------------------------------------------");
+	// b_it = b;
+	// while (b_it)
+	// {
+	// 	printf("b_it->num = %d\n", b_it->num);
+	// 	//printf("a_it->index = %d\n", a_it->index);
+	// 	// if (a_it->next)
+	// 	// 	printf("a_it->num = %d\n", a_it->next->num);
+	// 	b_it = b_it->next;
+	// }
+	//puts("-----------------------------------------------");
 	sort_3(*a);
-	a_it = *a;
-	while (a_it)
-	{
-		printf("a_it->num = %d\n", a_it->num);
-		//printf("b_it->index = %d\n", b_it->index);
-		// if (b_it->next)
-		// 	printf("b_it->num = %d\n", b_it->next->num);
-		a_it = a_it->next;
-	}
+	// a_it = *a;
+	// while (a_it)
+	// {
+	// 	printf("a_it->num = %d\n", a_it->num);
+	// 	//printf("b_it->index = %d\n", b_it->index);
+	// 	// if (b_it->next)
+	// 	// 	printf("b_it->num = %d\n", b_it->next->num);
+	// 	a_it = a_it->next;
+	// }
 	while (i-- > 0)
 	{
 		insert(a, &b);
 		sort_a(a);
 	}
-	a_it = *a;
-	while (a_it)
-	{
-		printf("a_it->num = %d\n", a_it->num);
-		//printf("b_it->index = %d\n", b_it->index);
-		// if (b_it->next)
-		// 	printf("b_it->num = %d\n", b_it->next->num);
-		a_it = a_it->next;
-	}
+	// a_it = *a;
+	// while (a_it)
+	// {
+	// 	printf("a_it->num = %d\n", a_it->num);
+	// 	//printf("b_it->index = %d\n", b_it->index);
+	// 	// if (b_it->next)
+	// 	// 	printf("b_it->num = %d\n", b_it->next->num);
+	// 	a_it = a_it->next;
+	// }
 }
 
 void	sort_more(t_stack **a)
