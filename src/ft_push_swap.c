@@ -14,9 +14,9 @@ void	sort_3(t_stack *stack)
 		if (stack->num > last_elt->num)
 		{
 			if (stack->num > stack->next->num)
-				ft_ra(stack);
+				ft_ra(stack, 0);
 			else
-				ft_rra(stack);
+				ft_rra(stack, 0);
 		}
 		else
 			ft_sa(stack);
@@ -52,7 +52,6 @@ int	main(int argc, char **argv)
 		sort_3(a);
 	else
 		sort_more(&a);
-	ft_print_stack(a);
-	//ft_print_stack(b);
+	//ft_print_stack(a);
 	return (0);
 }

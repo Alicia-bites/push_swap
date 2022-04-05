@@ -78,11 +78,11 @@ void		ft_sa(t_stack *stack);
 void		ft_sb(t_stack *stack);
 void		ft_pa(t_stack **a, t_stack **b);
 void		ft_pb(t_stack **b, t_stack **a);
-void		ft_ra(t_stack *stack);
-void		ft_rb(t_stack *stack);
+void		ft_ra(t_stack *stack, int i);
+void		ft_rb(t_stack *stack, int i);
 void		ft_rr(t_stack *a, t_stack *b);
-void		ft_rra(t_stack *stack);
-void		ft_rrb(t_stack *stack);
+void		ft_rra(t_stack *stack, int i);
+void		ft_rrb(t_stack *stack, int i);
 void		ft_rrr(t_stack *a, t_stack *b);
 
 //push_swap

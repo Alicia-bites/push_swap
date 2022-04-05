@@ -12,9 +12,9 @@ void	sort_3(t_stack *stack)
 		if (stack->num > last_elt->num)
 		{
 			if (stack->num > stack->next->num)
-				ft_ra(stack);
+				ft_ra(stack, 0);
 			else
-				ft_rra(stack);
+				ft_rra(stack, 0);
 		}
 		else
 			ft_sa(stack);
@@ -84,7 +84,7 @@ void	sort_a(t_stack **a)
 	{
 		while (index_a > 0)
 		{
-			ft_ra(*a);
+			ft_ra(*a, 0);
 			index_a--;
 		}
 	}
@@ -93,7 +93,7 @@ void	sort_a(t_stack **a)
 		index_a = ft_lstsize(*a) - index_a;
 		while (index_a > 0)
 		{
-			ft_rra(*a);
+			ft_rra(*a, 0);
 			index_a--;
 		}
 	}
@@ -120,7 +120,7 @@ void	sort_insert(t_stack **a)
 			i++;
 		}
 		else
-			ft_ra(*a);
+			ft_ra(*a, 0);
 	}
 	while (i < (*a)->size - 3)
 	{
@@ -181,10 +181,10 @@ int	main(int argc, char **argv)
 		ft_getsorted(&a, copy);
 		//ft_pb(&b, &a);
 		//ft_rrb(a);
-		ft_ra(a);
-		ft_ra(a);
-		ft_ra(a);
-		ft_ra(a);
+		ft_ra(a, 0);
+		ft_ra(a, 0);
+		ft_ra(a, 0);
+		ft_ra(a, 0);
 		//sort_3(a);
 		//sort_4(&a);
 		puts("----------------------------------------");
