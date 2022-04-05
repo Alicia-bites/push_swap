@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:08:07 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/25 15:58:25 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/05 16:24:16 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_index_reset(t_stack **stack)
 {
 	int		i;
 	t_stack	*iterator;
-	
+
 	iterator = *stack;
 	i = 0;
 	while ((*stack))
@@ -33,8 +33,8 @@ void	ft_pa(t_stack **a, t_stack **b)
 {
 	t_stack	*new;
 	t_stack	*iterator;
-
 	int		i;
+
 	if (!(*b))
 		return ;
 	if (!(*a))
@@ -61,7 +61,7 @@ void	ft_pa(t_stack **a, t_stack **b)
 void	ft_pb(t_stack **b, t_stack **a)
 {
 	t_stack	*new;
-	t_stack *iterator;
+	t_stack	*iterator;
 	int		i;
 
 	if (!(*a))

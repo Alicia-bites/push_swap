@@ -1,18 +1,22 @@
-#include "../headers/ft_push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/05 16:35:31 by amarchan          #+#    #+#             */
+/*   Updated: 2022/04/05 16:35:33 by amarchan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// int	ft_isspace(int c)
-// {
-// 	if (c == ' ' || c == '\f' || c == '\n'
-// 		|| c == '\r' || c == '\t' || c == '\v')
-// 		return (1);
-// 	return (0);
-// }
+#include "../headers/ft_push_swap.h"
 
 long long	ft_atoll(const char *str)
 {
-	int	i;
+	int			i;
 	long long	res;
-	int	negative;
+	int			negative;
 
 	i = 0;
 	res = 0;

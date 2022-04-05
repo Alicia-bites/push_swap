@@ -14,7 +14,7 @@
 
 void	ft_ra(t_stack *stack, int i)
 {
-	int tmp;
+	int	tmp;
 	int	tmp_s;
 
 	if (stack)
@@ -29,7 +29,7 @@ void	ft_ra(t_stack *stack, int i)
 		}
 		stack->num = tmp;
 		stack->sorted = tmp_s;
-		stack->next = NULL; 
+		stack->next = NULL;
 	}
 	if (i == 0)
 		ft_putstr("ra", 1, 1);
@@ -37,7 +37,7 @@ void	ft_ra(t_stack *stack, int i)
 
 void	ft_rb(t_stack *stack, int i)
 {
-	int tmp;
+	int	tmp;
 	int	tmp_s;
 
 	if (stack)
@@ -52,13 +52,13 @@ void	ft_rb(t_stack *stack, int i)
 		}
 		stack->num = tmp;
 		stack->sorted = tmp_s;
-		stack->next = NULL; 
+		stack->next = NULL;
 	}
 	if (i == 0)
 		ft_putstr("rb", 1, 1);
 }
 
-void ft_rr(t_stack *a, t_stack *b)
+void	ft_rr(t_stack *a, t_stack *b)
 {
 	ft_ra(a, 1);
 	ft_rb(b, 1);

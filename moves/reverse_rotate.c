@@ -14,12 +14,12 @@
 
 void	ft_rra(t_stack *stack, int i)
 {
-	int tmp;
+	int	tmp;
 	int	tmp_s;
-	
+
 	if (stack)
 	{
-		while(stack->next)
+		while (stack->next)
 			stack = stack->next;
 		tmp = stack->num;
 		tmp_s = stack->sorted;
@@ -38,12 +38,12 @@ void	ft_rra(t_stack *stack, int i)
 
 void	ft_rrb(t_stack *stack, int i)
 {
-	int tmp;
+	int	tmp;
 	int	tmp_s;
 
 	if (stack)
 	{
-		while(stack->next)
+		while (stack->next)
 			stack = stack->next;
 		tmp = stack->num;
 		tmp_s = stack->sorted;

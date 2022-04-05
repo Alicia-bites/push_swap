@@ -28,7 +28,6 @@ int	ft_panic(int errcode)
 		ft_putstr("Error", 1, 2);
 	else if (errcode == MALLOC_FAILURE)
 		ft_putstr("Error", 1, 2);
-	// printf("errcode = %d\n", errcode);
 	return (errcode);
 }
 
@@ -36,7 +35,7 @@ int	ft_panic(int errcode)
 int	ft_checkdup(t_stack *stack, int elt)
 {
 	t_stack	*iterator;
-	
+
 	if (stack)
 	{
 		iterator = stack;
@@ -84,15 +83,15 @@ void	ft_getsorted(t_stack **a, t_stack *copy)
 	t_stack	*it_copy;
 
 	it_a = *a;
-	while(it_a)
+	while (it_a)
 	{
 		it_copy = copy;
 		while (it_copy)
 		{
-			if(it_a->num == it_copy->num)
+			if (it_a->num == it_copy->num)
 			{
 				it_a->sorted = it_copy->index;
-				break;
+				break ;
 			}
 			it_copy = it_copy->next;
 		}

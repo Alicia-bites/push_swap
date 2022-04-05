@@ -14,7 +14,6 @@
 
 void	ft_lstadd_front(t_stack **first_elt, t_stack *new)
 {
-	//printf("new->num : %d\n", new->num);
 	if (first_elt && new)
 	{
 		new->next = *first_elt;

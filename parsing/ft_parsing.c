@@ -19,7 +19,7 @@ t_stack	*ft_create_list(int argc, char *arg)
 	static t_stack	*lst;
 	t_stack			*new;
 	int				int_arg;
-	
+
 	int_arg = ft_atoi(arg);
 	if (i == 0)
 		lst = ft_lstnew(argc - 1, int_arg, i, 0);
@@ -37,7 +37,7 @@ t_stack	*ft_create_list(int argc, char *arg)
 static int	stack_isinteger(char *s)
 {
 	int	i;
-	
+
 	i = 0;
 	while (s[i])
 	{
@@ -86,7 +86,7 @@ t_stack	*ft_parse(int argc, char *arg)
 			ft_panic(OUT_INT);
 			exit(EXIT_FAILURE);
 		}
-	} 
+	}
 	else
 	{
 		ft_panic(INVALID_ARG);

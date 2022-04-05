@@ -15,7 +15,7 @@
 //swap the first 2 elts of the stack
 void	ft_sa(t_stack *stack)
 {
-	int tmp;
+	int	tmp;
 	int	tmp_s;
 
 	if (stack)
@@ -28,12 +28,11 @@ void	ft_sa(t_stack *stack)
 		stack->next->sorted = tmp_s;
 		ft_putstr("sa", 1, 1);
 	}
-	
 }
 
 void	ft_sb(t_stack *stack)
 {
-	int tmp;
+	int	tmp;
 	int	tmp_s;
 
 	if (stack)
@@ -46,10 +45,9 @@ void	ft_sb(t_stack *stack)
 		stack->next->sorted = tmp_s;
 		ft_putstr("sb", 1, 2);
 	}
-	
 }
 
-void ft_swap_a_and_b(t_stack *a, t_stack *b)
+void	ft_swap_a_and_b(t_stack *a, t_stack *b)
 {
 	ft_sa(a);
 	ft_sb(b);

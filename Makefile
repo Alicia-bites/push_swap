@@ -6,7 +6,7 @@
 #    By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 09:22:13 by amarchan          #+#    #+#              #
-#    Updated: 2022/03/26 15:57:35 by amarchan         ###   ########.fr        #
+#    Updated: 2022/04/05 14:37:05 by amarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = push_swap
 SRCS =	src/ft_push_swap.c \
 		src/ft_push_swap_utils.c \
 		src/sortmore.c \
+		src/sortmore_2.c \
 		src/sortmore_utils.c \
 		parsing/ft_parsing.c \
 		parsing/ft_parsing_utils.c \

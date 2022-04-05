@@ -1,10 +1,21 @@
-#include "../headers/ft_push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_push_swap.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/05 16:49:19 by amarchan          #+#    #+#             */
+/*   Updated: 2022/04/05 16:49:22 by amarchan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "../headers/ft_push_swap.h"
 
 //sort a list of max 3 elements
 void	sort_3(t_stack *stack)
 {
-	t_stack *last_elt;
+	t_stack	*last_elt;
 
 	last_elt = stack;
 	while (last_elt->next)
@@ -25,19 +36,20 @@ void	sort_3(t_stack *stack)
 
 void	ft_print_stack(t_stack *stack)
 {
-	t_stack *iterator;
+	t_stack	*iterator;
+
 	iterator = stack;
 	while (iterator)
 	{
-		printf("%d\n", iterator->num);
+		printf("%d\n", iterator->sorted);
 		iterator = iterator->next;
 	}
 }
 
 int	main(int argc, char **argv)
 {
-	t_stack *a;
-	t_stack *copy;
+	t_stack	*a;
+	t_stack	*copy;
 	int		i;
 
 	i = 1;
@@ -52,6 +64,6 @@ int	main(int argc, char **argv)
 		sort_3(a);
 	else
 		sort_more(&a);
-	//ft_print_stack(a);
+	ft_print_stack(a);
 	return (0);
 }

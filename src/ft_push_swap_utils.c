@@ -16,7 +16,7 @@
 //if elt is bigger than next elt, return 0. 
 int	is_sorted(t_stack *stack)
 {	
-	t_stack *iterator;
+	t_stack	*iterator;
 
 	iterator = stack;
 	while (iterator->next)
@@ -39,4 +39,3 @@ int	is_complete(t_stack *a)
 		return (1);
 	return (0);
 }
-

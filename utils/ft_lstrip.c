@@ -12,12 +12,12 @@
 
 #include "../headers/ft_push_swap.h"
 
-void    ft_lstrip(char *s)
+void	ft_lstrip(char *s)
 {
-    int    i;
+	int	i;
 
-    i = 0;
-    while (s[i] && (ft_isspace(s[i])))
-        i++;
-    ft_memmove(s, s + i, ft_strlen(s) - i + 1);
+	i = 0;
+	while (s[i] && (ft_isspace(s[i])))
+		i++;
+	ft_memmove(s, s + i, ft_strlen(s) - i + 1);
 }
