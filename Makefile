@@ -6,7 +6,7 @@
 #    By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 09:22:13 by amarchan          #+#    #+#              #
-#    Updated: 2022/04/06 10:08:14 by amarchan         ###   ########.fr        #
+#    Updated: 2022/04/06 13:49:31 by amarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ $(NAME): ${OBJS}
 $(BONUS): ${OBJS_B}
 		gcc -o checker $(OBJS_B)
 
-all: $(NAME) $(BONUS)
+all: $(NAME)
 
 clean:
 	@${RM} ${OBJS}
