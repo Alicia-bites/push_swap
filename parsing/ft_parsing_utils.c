@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:07:43 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/25 14:53:12 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/05 18:32:40 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	ft_checkdup(t_stack *stack, int elt)
 			if (iterator->num == elt)
 			{
 				ft_panic(FOUND_DUP);
+				ft_clear(stack);
 				exit(EXIT_FAILURE);
 			}
 			iterator = iterator->next;

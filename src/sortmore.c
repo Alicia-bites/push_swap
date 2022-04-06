@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 14:44:48 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/05 15:34:31 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/05 18:39:10 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static int	get_a_index(t_stack *a)
 	int		index_a;
 
 	iterator = a;
+	index_a = 0;
 	while (iterator->next)
 	{
 		if (iterator->sorted > iterator->next->sorted)
@@ -79,6 +80,7 @@ static void	sort_insert(t_stack **a)
 	sort_3(*a);
 	while (i-- > 0)
 		insert(a, &b);
+	ft_clear(b);
 }
 
 void	sort_more(t_stack **a)

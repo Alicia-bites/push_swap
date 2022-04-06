@@ -6,11 +6,13 @@
 #    By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 09:22:13 by amarchan          #+#    #+#              #
-#    Updated: 2022/04/05 14:37:05 by amarchan         ###   ########.fr        #
+#    Updated: 2022/04/06 10:08:14 by amarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+
+BONUS = bonus
 
 SRCS =	src/ft_push_swap.c \
 		src/ft_push_swap_utils.c \
@@ -45,11 +47,18 @@ SRCS =	src/ft_push_swap.c \
 		utils/ft_lstsize.c \
 		utils/ft_lstcopy.c \
 
+SRCS_B =	checker.c \
+			pushswap_bonus/get_next_line.c \
+			pushswap_bonus/get_next_line_utils.c \
+			utils/ft_strlen.c \
+
 OBJS := ${SRCS:.c=.o}
+
+OBJS_B := ${SRCS_B:.c=.o}
 
 CC = gcc
 
-CFLAGS = -g3
+CFLAGS = -g3 -Wall -Wextra -Werror
 
 AR = ar rcs
 
@@ -60,10 +69,13 @@ INC_DIR = headers
 .c.o: $(SRCS)
 	$(CC) $(CFLAGS) -c -I ${INC_DIR} $< -o ${<:.c=.o}
 
-all: $(NAME)
-
 $(NAME): ${OBJS}
 		gcc -o $(NAME) $(OBJS)
+
+$(BONUS): ${OBJS_B}
+		gcc -o checker $(OBJS_B)
+
+all: $(NAME) $(BONUS)
 
 clean:
 	@${RM} ${OBJS}

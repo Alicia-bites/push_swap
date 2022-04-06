@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 16:22:05 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/05 16:22:08 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/06 09:59:36 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 # include <string.h>
 # include <limits.h>
 # include <sys/types.h>
-# include <signal.h>
 # include <unistd.h>
 # include <stdint.h>
 # include <stdlib.h>
@@ -100,5 +99,6 @@ void		rotate_ab(int idx_a, int idx_b, t_stack **a, t_stack **b);
 void		sort_more(t_stack **a);
 int			absolu(int x);
 int			get_last_elt(t_stack *lst);
+void		ft_clear(t_stack *t_stack);
 
 #endif

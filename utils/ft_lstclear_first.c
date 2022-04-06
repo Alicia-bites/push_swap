@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 11:28:33 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/23 18:08:43 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/05 19:57:44 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@ void	ft_lstclear_first(t_stack **elt)
 {
 	t_stack	*iterator;
 
-	iterator = *elt;
-	free(*elt);
-	if (iterator->next)
-		*elt = iterator->next;
-	else
+	if (*elt && elt)
+	{
+		iterator = *elt;
 		*elt = NULL;
-	if (iterator->next)
-		(*elt)->prev = NULL;
+		if (iterator->next)
+			*elt = iterator->next;
+		else
+			*elt = NULL;
+		if (iterator->next && *elt)
+			(*elt)->prev = NULL;
+		free(iterator);
+	}
 }
