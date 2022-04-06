@@ -6,13 +6,14 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:51:46 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/06 09:47:38 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/06 14:25:04 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../headers/ft_push_swap.h"
+#include "../headers/pushswap_bonus.h"
 
-int	ft_strlen(char *str)
+int	ft_my_strlen(char *str)
 {
 	int	i;
 

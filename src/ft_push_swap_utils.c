@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:53:08 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/25 14:38:23 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/06 14:31:49 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ int	is_sorted(t_stack *stack)
 		iterator = iterator->next;
 	}
 	return (1);
+}
+
+void	ft_clear(t_stack *stack)
+{
+	ft_lstclear(&stack);
+	ft_lstclear_back(&stack);
 }
 
 int	is_complete(t_stack *a)

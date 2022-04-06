@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 16:49:19 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/06 13:49:20 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/06 14:31:41 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,6 @@ void	ft_print_stack(t_stack *stack)
 	}
 }
 
-void	ft_clear(t_stack *stack)
-{
-	ft_lstclear(&stack);
-	ft_lstclear_back(&stack);
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -70,7 +64,6 @@ int	main(int argc, char **argv)
 		sort_3(a);
 	else
 		sort_more(&a);
-	//ft_print_stack(a);
 	ft_clear(copy);
 	ft_clear(a);
 	return (0);
