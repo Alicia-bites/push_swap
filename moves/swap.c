@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:45:26 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/25 16:09:17 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/06 15:53:13 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_sb(t_stack *stack)
 	}
 }
 
-void	ft_swap_a_and_b(t_stack *a, t_stack *b)
+void	ft_ss(t_stack *a, t_stack *b)
 {
 	ft_sa(a);
 	ft_sb(b);

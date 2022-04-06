@@ -6,28 +6,45 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:00:41 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/06 14:40:50 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/06 18:52:40 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_push_swap.h"
 #include "../headers/pushswap_bonus.h"
 
-void	ft_do_op(t_stack *a, char *moove)
+void	ft_do_op(t_stack **a, t_stack **b, char *moove)
 {
-	if (ft_strcmp("sa") == ft_strcmp(moove))
-		ft_sa(a);
+	if (ft_strcmp("sa\n", moove) == 0)
+		ft_sa(*a);
+	else if (ft_strcmp("sb\n", moove) == 0)
+		ft_sb(*b);
+	else if (ft_strcmp("pa\n", moove) == 0)
+		ft_pa(a, b);
+	else if (ft_strcmp("pb\n", moove) == 0)
+		ft_pb(b, a);
+	else if (ft_strcmp("ra\n", moove) == 0)
+		ft_ra(*a, 0);
+	else if (ft_strcmp("rb\n", moove) == 0)
+		ft_rb(*b, 0);
+	else if (ft_strcmp("rr\n", moove) == 0)
+		ft_rr(*a, *b);
+	else if (ft_strcmp("rra\n", moove) == 0)
+		ft_rra(*a, 0);
+	else if (ft_strcmp("rrb\n", moove) == 0)
+		ft_rrb(*b, 0);
+	else if (ft_strcmp("rrr\n", moove) == 0)
+		ft_rrr(*a, *b);
 }
 
 char	*get_instructions(void)
 {
 	char	*moove;
-	
+
 	moove = get_next_line(0);
 	return (moove);
 }
 
-//sort a list of max 3 elements
 void	sort_3(t_stack *stack)
 {
 	t_stack	*last_elt;
@@ -49,28 +66,39 @@ void	sort_3(t_stack *stack)
 	}
 }
 
+void	check_that_pile(t_stack **a, t_stack **b)
+{
+	char	*moove;
+
+	moove = "yo";
+	while (moove != NULL)
+	{
+		moove = get_instructions();
+		if (!moove)
+			break ;
+		ft_do_op(a, b, moove);
+		free(moove);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-	t_stack	*copy;
+	t_stack	*b;
 	int		i;
-	char	*moove;
 
+	b = NULL;
 	i = 1;
 	if (argc <= 1)
 		return (0);
 	while (argv[i])
 		a = ft_parse(argc, argv[i++]);
-	copy = ft_lstcopy(a);
-	init_sort(copy);
-	ft_getsorted(&a, copy);
-	moove = get_instructions();
-	ft_do_op(moove);
-	if (argc <= 4)
-		sort_3(a);
+	check_that_pile(&a, &b);
+	if (is_sorted(a))
+		write(1, "OK\n", 3);
 	else
-		sort_more(&a);
-	ft_clear(copy);
+		write(1, "KO\n", 3);
 	ft_clear(a);
+	ft_clear(b);
 	return (0);
 }

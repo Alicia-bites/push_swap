@@ -6,7 +6,7 @@
 #    By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 09:22:13 by amarchan          #+#    #+#              #
-#    Updated: 2022/04/06 14:33:03 by amarchan         ###   ########.fr        #
+#    Updated: 2022/04/06 17:19:09 by amarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,6 +73,7 @@ SRCS_B =	pushswap_bonus/checker.c \
 			utils/ft_rstrip.c \
 			utils/ft_strcat.c \
 			utils/ft_strlen.c \
+			utils/ft_strcmp.c \
 			utils/ft_lstadd_back.c \
 			utils/ft_lstadd_front.c \
 			utils/ft_lstclear_back.c \
@@ -88,7 +89,7 @@ OBJS_B := ${SRCS_B:.c=.o}
 
 CC = gcc
 
-CFLAGS = -g3 -Wall -Wextra -Werror
+CFLAGS = -g3
 
 AR = ar rcs
 

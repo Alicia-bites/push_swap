@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:52:03 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/06 14:20:49 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/06 16:52:42 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,22 +55,22 @@ char	*ft_get_line(char *line, char *buf, int *remember, int has_read)
 
 	buf[has_read] = '\0';
 	temp = ft_strdup(buf, remember);
-	line = ft_realloc_and_concat(line, ft_strlen(line),
-			ft_strlen(temp), temp);
+	line = ft_realloc_and_concat(line, ft_my_strlen(line),
+			ft_my_strlen(temp), temp);
 	return (line);
 }
 
 char	*ft_check_line(int *remember, char *line)
 {
 	*remember = BUFFER_SIZE;
-	if (ft_strlen(line) == 0)
+	if (ft_my_strlen(line) == 0)
 		return (ft_free(line));
 	return (line);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	buf[2 + 1];
+	static char	buf[BUFFER_SIZE + 1];
 	static int	remember;
 	char		*line;
 	int			has_read;
