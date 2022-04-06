@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 16:49:19 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/05 19:32:27 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/06 13:49:20 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	main(int argc, char **argv)
 
 	i = 1;
 	if (argc <= 2)
-		return (ft_panic(MISSING_ARG));
+		return (0);
 	while (argv[i])
 		a = ft_parse(argc, argv[i++]);
 	copy = ft_lstcopy(a);
@@ -70,7 +70,7 @@ int	main(int argc, char **argv)
 		sort_3(a);
 	else
 		sort_more(&a);
-	ft_print_stack(a);
+	//ft_print_stack(a);
 	ft_clear(copy);
 	ft_clear(a);
 	return (0);
