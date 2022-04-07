@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:45:04 by amarchan          #+#    #+#             */
-/*   Updated: 2022/03/25 16:00:53 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/07 11:50:55 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,7 @@ static int	stack_isinteger(char *s)
 		if (s[i] == '-' || s[i] == '+')
 			i++;
 		if (!ft_isdigit(s[i]))
-		{	
-			ft_panic(NOT_INT);
-			exit(EXIT_FAILURE);
-		}
+			return (ft_panic(NOT_INT));
 		i++;
 	}
 	return (1);
@@ -70,28 +67,26 @@ static int	ft_invalid_int(long long arg)
 t_stack	*ft_parse(int argc, char *arg)
 {
 	long long	num;
+	int			err;
 	t_stack		*lst;
 
+	err = -42;
 	ft_strip(arg);
 	if (ft_strlen(arg) == 0)
-	{
-		ft_panic(EMPTY_STR);
-		exit(EXIT_FAILURE);
-	}
+		err = ft_panic(EMPTY_STR);
 	else if (ft_strlen(arg) <= 11 && stack_isinteger(arg))
 	{
 		num = ft_atoll(arg);
 		if (ft_invalid_int(num))
-		{
-			ft_panic(OUT_INT);
-			exit(EXIT_FAILURE);
-		}
+			err = ft_panic(OUT_INT);
 	}
 	else
-	{
-		ft_panic(INVALID_ARG);
-		exit(EXIT_FAILURE);
-	}
+		err = ft_panic(INVALID_ARG);
 	lst = ft_create_list(argc, arg);
+	if (err < -1 && err > -7)
+	{
+		ft_clear(lst);
+		exit(err);
+	}
 	return (lst);
 }
