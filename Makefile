@@ -6,13 +6,16 @@
 #    By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 09:22:13 by amarchan          #+#    #+#              #
-#    Updated: 2022/04/06 17:19:09 by amarchan         ###   ########.fr        #
+#    Updated: 2022/04/07 17:45:09 by amarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 BONUS = bonus
+
+NORMINETTE_BIN = norminette
+NM_BIN = nm
 
 SRCS =	src/ft_push_swap.c \
 		src/ft_push_swap_utils.c \
@@ -48,18 +51,19 @@ SRCS =	src/ft_push_swap.c \
 		utils/ft_lstcopy.c \
 
 SRCS_B =	pushswap_bonus/checker.c \
+			pushswap_bonus/checker_utils.c \
 			pushswap_bonus/get_next_line.c \
 			pushswap_bonus/get_next_line_utils.c \
+			pushswap_bonus/bonus_swap.c \
+			pushswap_bonus/bonus_push.c \
+			pushswap_bonus/bonus_rotate.c \
+			pushswap_bonus/bonus_reverse_rotate.c \
 			src/ft_push_swap_utils.c \
 			src/sortmore.c \
 			src/sortmore_2.c \
 			src/sortmore_utils.c \
 			parsing/ft_parsing.c \
 			parsing/ft_parsing_utils.c \
-			moves/swap.c \
-			moves/push.c \
-			moves/rotate.c \
-			moves/reverse_rotate.c \
 			utils/ft_atoi.c \
 			utils/ft_atoll.c \
 			utils/ft_isdigit.c \
@@ -89,7 +93,7 @@ OBJS_B := ${SRCS_B:.c=.o}
 
 CC = gcc
 
-CFLAGS = -g3
+CFLAGS = -Wall -Werror -Wextra
 
 AR = ar rcs
 
@@ -109,11 +113,17 @@ $(BONUS): ${OBJS_B}
 all: $(NAME)
 
 clean:
-	@${RM} ${OBJS}
+	@${RM} ${OBJS} ${OBJS_B}
 
 fclean: clean
-	@${RM} ${NAME}
+	@${RM} ${NAME} ${BONUS}
 
 re: fclean all
 
-.PHONY: all clean fclean re
+norme:
+	@${NORMINETTE_BIN} ${SRCS} ${SRCS_B}
+
+sym:
+	@${NM_BIN} -Dgu $(NAME) checker
+
+.PHONY: all clean fclean re norme sym

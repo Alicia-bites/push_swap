@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:00:41 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/06 18:52:40 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:31:09 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,19 @@ void	ft_do_op(t_stack **a, t_stack **b, char *moove)
 	else if (ft_strcmp("pb\n", moove) == 0)
 		ft_pb(b, a);
 	else if (ft_strcmp("ra\n", moove) == 0)
-		ft_ra(*a, 0);
+		ft_ra(*a, 1);
 	else if (ft_strcmp("rb\n", moove) == 0)
-		ft_rb(*b, 0);
+		ft_rb(*b, 1);
 	else if (ft_strcmp("rr\n", moove) == 0)
 		ft_rr(*a, *b);
 	else if (ft_strcmp("rra\n", moove) == 0)
-		ft_rra(*a, 0);
+		ft_rra(*a, 1);
 	else if (ft_strcmp("rrb\n", moove) == 0)
-		ft_rrb(*b, 0);
+		ft_rrb(*b, 1);
 	else if (ft_strcmp("rrr\n", moove) == 0)
 		ft_rrr(*a, *b);
+	else
+		ft_error(*a, *b);
 }
 
 char	*get_instructions(void)
@@ -71,7 +73,7 @@ void	check_that_pile(t_stack **a, t_stack **b)
 	char	*moove;
 
 	moove = "yo";
-	while (moove != NULL)
+	while (moove != NULL && *(a) != NULL)
 	{
 		moove = get_instructions();
 		if (!moove)

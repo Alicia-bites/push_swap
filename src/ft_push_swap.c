@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 16:49:19 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/07 11:22:50 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:54:34 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,6 @@ void	sort_3(t_stack *stack)
 	}
 }
 
-void	ft_print_stack(t_stack *stack)
-{
-	t_stack	*iterator;
-
-	iterator = stack;
-	while (iterator)
-	{
-		printf("%d\n", iterator->sorted);
-		iterator = iterator->next;
-	}
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -53,8 +41,8 @@ int	main(int argc, char **argv)
 	int		i;
 
 	i = 1;
-	if (argc <= 2)
-		return (0);
+	if (argc <= 1)
+		return (56);
 	while (argv[i])
 		a = ft_parse(argc, argv[i++]);
 	copy = ft_lstcopy(a);

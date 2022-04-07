@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:53:08 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/06 14:31:49 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:04:55 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	is_sorted(t_stack *stack)
 {	
 	t_stack	*iterator;
 
+	if (!stack)
+		return (0);
 	iterator = stack;
 	while (iterator->next)
 	{

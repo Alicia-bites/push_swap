@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:45:04 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/07 11:50:55 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:42:53 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,14 @@ static int	stack_isinteger(char *s)
 	int	i;
 
 	i = 0;
+	if (!*s)
+		return (NOT_INT);
 	while (s[i])
 	{
 		if (s[i] == '-' || s[i] == '+')
 			i++;
 		if (!ft_isdigit(s[i]))
-			return (ft_panic(NOT_INT));
+			return (NOT_INT);
 		i++;
 	}
 	return (1);
@@ -73,18 +75,20 @@ t_stack	*ft_parse(int argc, char *arg)
 	err = -42;
 	ft_strip(arg);
 	if (ft_strlen(arg) == 0)
-		err = ft_panic(EMPTY_STR);
-	else if (ft_strlen(arg) <= 11 && stack_isinteger(arg))
+		err = EMPTY_STR;
+	err = stack_isinteger(arg);
+	if (ft_strlen(arg) <= 11 && stack_isinteger(arg))
 	{
 		num = ft_atoll(arg);
 		if (ft_invalid_int(num))
-			err = ft_panic(OUT_INT);
+			err = OUT_INT;
 	}
 	else
-		err = ft_panic(INVALID_ARG);
+		err = INVALID_ARG;
 	lst = ft_create_list(argc, arg);
 	if (err < -1 && err > -7)
 	{
+		ft_putstr("Error", 1, 2);
 		ft_clear(lst);
 		exit(err);
 	}
