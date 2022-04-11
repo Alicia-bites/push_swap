@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 16:22:05 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/06 09:59:36 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/11 16:14:46 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ typedef struct s_stack
 	int					index;
 	int					sorted;
 	int					size;
-	int					*sort;
 	struct s_stack		*prev;
 	struct s_stack		*next;
 }	t_stack;

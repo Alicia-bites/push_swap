@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:12:18 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/07 17:23:29 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/11 11:33:43 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ void	ft_rr(t_stack *a, t_stack *b)
 {
 	ft_ra(a, 1);
 	ft_rb(b, 1);
+	ft_putstr("rr", 1, 1);
 }

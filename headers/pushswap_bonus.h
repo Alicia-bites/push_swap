@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 16:09:53 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/07 14:54:25 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/11 16:49:50 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ char	*ft_realloc_and_concat(char *str, size_t oldsize, size_t newsize,
 			char *newstr);
 char	*ft_free(char *str);
 void	ft_error(t_stack *a, t_stack *b);
+void	ft_ss(t_stack *a, t_stack *b);
 
 #endif
