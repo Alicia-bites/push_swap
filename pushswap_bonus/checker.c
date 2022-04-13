@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:00:41 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/11 16:50:25 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/04/12 18:58:47 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_do_op(t_stack **a, t_stack **b, char *moove)
 	else if (ft_strcmp("ss\n", moove) == 0)
 		ft_ss(*a, *b);
 	else
-		ft_error(*a, *b);
+		ft_error(*a, *b, &moove);
 }
 
 char	*get_instructions(void)
