@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:07:43 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/07 14:58:49 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/05/23 17:26:22 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,17 @@
 int	ft_panic(int errcode)
 {
 	if (errcode == MISSING_ARG)
-		ft_putstr("Error", 1, 2);
+		ft_putstr("Error - missing arg", 1, 2);
 	else if (errcode == EMPTY_STR)
-		ft_putstr("Error", 1, 2);
+		ft_putstr("Error - empty string", 1, 2);
 	else if (errcode == FOUND_DUP)
-		ft_putstr("Error", 1, 2);
+		ft_putstr("Error - found duplicate", 1, 2);
 	else if (errcode == NOT_INT)
-		ft_putstr("Error", 1, 2);
+		ft_putstr("Error - not integer", 1, 2);
 	else if (errcode == OUT_INT)
-		ft_putstr("Error", 1, 2);
-	else if (errcode == INVALID_ARG)
-		ft_putstr("Error", 1, 2);
+		ft_putstr("Error - outside of integer boundaries", 1, 2);
 	else if (errcode == MALLOC_FAILURE)
-		ft_putstr("Error", 1, 2);
+		ft_putstr("Error - malloc failure", 1, 2);
 	return (errcode);
 }
 

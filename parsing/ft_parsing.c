@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:45:04 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/12 18:57:32 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/05/23 17:28:33 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,10 @@ t_stack	*ft_parse(int argc, char *arg)
 		if (ft_invalid_int(num))
 			err = OUT_INT;
 	}
-	else
-		err = INVALID_ARG;
 	lst = ft_create_list(argc, arg);
-	if (err < -1 && err > -7)
+	if (err < -1 && err > -6)
 	{
-		ft_putstr("Error", 1, 2);
+		ft_panic(err);
 		ft_clear(lst);
 		exit(err);
 	}

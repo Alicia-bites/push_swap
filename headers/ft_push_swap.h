@@ -6,7 +6,7 @@
 /*   By: amarchan <amarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 16:22:05 by amarchan          #+#    #+#             */
-/*   Updated: 2022/04/11 16:14:46 by amarchan         ###   ########.fr       */
+/*   Updated: 2022/05/23 17:28:24 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 # define FOUND_DUP -3
 # define NOT_INT -4
 # define OUT_INT -5
-# define INVALID_ARG -6
-# define MALLOC_FAILURE -7
+# define MALLOC_FAILURE -6
 
 # include <stdio.h>
 # include <string.h>
